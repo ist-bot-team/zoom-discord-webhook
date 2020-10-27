@@ -5,8 +5,6 @@ const path = require('path');
 
 const content = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'content.json'), 'utf-8'));
 
-console.log(content);
-
 const sendEmbed = ({ webhookLink, className, color, id, password, link, comment }) => {
   const webhookContent = {
     content: 'Zoom Meeting Information',
