@@ -1,0 +1,21 @@
+{
+  "https://discordapp.com/api/webhooks/.../...": [
+    {
+      "title": "Class Name",
+      "color": "#123456",
+      "classes": [
+        {
+          "time": "tue,11:00",
+          "id": "1234567",
+          "password": "123456",
+          "link": "https://zoom.us/j/1234567"
+        },
+        {
+          "time": "thu,11:00",
+          "comment": "Some information",
+          "link": "https://zoom.us/j/7654321"
+        }
+      ]
+    }
+  ]
+}
