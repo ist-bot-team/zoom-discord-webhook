@@ -1,0 +1,17 @@
+{
+  "name": "zoom-discord-webhook",
+  "version": "1.0.0",
+  "description": "Send Zoom meeting information to Discord via Webhooks",
+  "main": "src/index.js",
+  "repository": "git@github.com:ist-bot-team/zoom-discord-webhook.git",
+  "author": "Diogo Correia <me@diogotc.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "node-cron": "^2.0.3"
+  }
+}
