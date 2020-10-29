@@ -30,6 +30,11 @@ const sendEmbed = ({ webhookLink, className, color, id, password, link, comment 
       value: password,
       inline: true,
     });
+  if (link)
+    webhookContent.embeds[0].fields.push({
+      name: 'Join with link',
+      value: `[Click here to join the meeting](${link})`,
+    });
 
   axios.post(webhookLink, webhookContent);
 };
