@@ -5,6 +5,13 @@ const path = require('path');
 
 const content = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'content.json'), 'utf-8'));
 
+const reformatLink = (link) => {
+  const result = link.match(/https:\/\/([a-zA-Z0-9.\-_]+)\/j\/(\d+)(?:\?pwd=(\w+))?/);
+  if (!result) return link;
+  const [_, domain, id, pwd] = result;
+  return `zoommtg://${domain}/join?confno=${id}${pwd ? `&pwd=${pwd}` : ''}`;
+};
+
 const sendEmbed = ({ webhookLink, className, color, id, password, link, comment }) => {
   const webhookContent = {
     content: 'Zoom Meeting Information',
@@ -33,7 +40,7 @@ const sendEmbed = ({ webhookLink, className, color, id, password, link, comment 
   if (link)
     webhookContent.embeds[0].fields.push({
       name: 'Join with link',
-      value: `[Click here to join the meeting](${link})`,
+      value: `[Click here to join the meeting](${reformatLink(link)})`,
     });
 
   axios.post(webhookLink, webhookContent);
