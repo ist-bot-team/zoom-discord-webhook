@@ -2,9 +2,11 @@ version: '3.8'
 
 services:
   zoom-discord-webhook:
-    image: diogotcorreia/zoom-discord-webhook:v1.0.0
+    image: diogotcorreia/zoom-discord-webhook:v1.1.0
     volumes:
       - type: bind
         source: ./data
         target: /app/data
+    environment:
+      CRON_TIMEZONE: Europe/Lisbon
     restart: unless-stopped

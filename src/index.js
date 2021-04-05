@@ -56,7 +56,7 @@ Object.entries(content).forEach(([link, courses]) => {
               color: course.color,
               ...classObj,
             }),
-          { timezone: 'Europe/Lisbon' }
+          { timezone: process.env.CRON_TIMEZONE }
         );
       });
     });
