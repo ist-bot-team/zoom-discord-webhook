@@ -3,7 +3,9 @@ const axios = require('axios');
 const fs = require('fs');
 const path = require('path');
 
-const content = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'content.json'), 'utf-8'));
+const content = JSON.parse(
+  fs.readFileSync(path.join(__dirname, '..', 'data', 'content.json'), 'utf-8')
+);
 
 const sendEmbed = ({ webhookLink, className, color, id, password, link, comment }) => {
   const webhookContent = {
